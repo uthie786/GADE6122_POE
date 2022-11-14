@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4o3mJXk7F7yaFCbrchmWgEoxizu27enZ44613VMa0kqM7gK9n5Nej9ekpOqgEbYlmQmpTqMfhFhmhwWf8trMbg==",
+  "dgSpecHash": "BTNgGlEE0qFPoEKJ/i0kXRtRJvfGYZtTFot3mmO7jO/CH8+Yuy5o9PlPHMg1p1jyU95yJmBY8Qx5XdH6TXxoKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Uthmaan\\Desktop\\Github\\GADE6122_PART2\\Gade6122_Part1_corrected\\Gade6122_Part1_corrected\\Gade6122_Part1_corrected.csproj",
+  "projectFilePath": "C:\\Users\\Uthmaan\\Desktop\\Github\\GADE6122_POE\\Gade6122_POE\\Gade6122_Part1_corrected\\Gade6122_Part1_corrected.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Uthmaan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
