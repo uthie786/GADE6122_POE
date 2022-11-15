@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
-    public enum RTypes { Rifle, Longbow } 
+    public enum Types { Rifle, Longbow } 
    
     
     internal class RangedWeapon : Weapon

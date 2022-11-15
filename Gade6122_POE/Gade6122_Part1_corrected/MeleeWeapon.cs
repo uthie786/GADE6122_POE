@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
-    public enum MTypes { Dagger, Longsword}
+    public enum Types { Dagger, Longsword}
     internal class MeleeWeapon : Weapon
     {
         public MeleeWeapon(Types type, int x, int y) : base(x, y, '⚔')
