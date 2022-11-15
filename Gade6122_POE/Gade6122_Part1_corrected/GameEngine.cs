@@ -12,6 +12,7 @@ namespace Gade6122_Part1_corrected
     {
         
         public Map map;
+        public Shop shop;
         public SwampCreature swampCreature;
         const string SERIALIZED_GAME_SAVE = "SwampGameSave.gdf";
         
