@@ -12,6 +12,7 @@ namespace Gade6122_Part1_corrected
         private Hero hero;
         private Enemy[] enemies;
         public Item[] items;
+        public Item[] weapons;
         private int width;
         private int height;
         [NonSerialized] private Random random;
@@ -23,7 +24,7 @@ namespace Gade6122_Part1_corrected
         {
             get { return enemies; }
         }
-        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int numEnemies, int goldAmount) //creates map with min and max size and amount of enemies and gold 
+        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight, int numEnemies, int itemAmount) //creates map with min and max size and amount of enemies and gold 
         {
             random = new Random(); //random variable used to randomise the map size
 
@@ -32,7 +33,8 @@ namespace Gade6122_Part1_corrected
             map = new Tile[width, height];
             InitialiseMap();
             enemies = new Enemy[numEnemies]; //enemy array that holds a number of enemies
-            items = new Item[goldAmount]; //gold array that holds an amount of gold
+            items = new Item[itemAmount]; //gold array that holds an amount of gold
+           
 
             hero = (Hero)Create(TileType.Hero);
             for (int i = 0; i < enemies.Length; i++)
@@ -41,8 +43,17 @@ namespace Gade6122_Part1_corrected
             }
             for (int i = 0; i < items.Length; i++)
             {
-                items[i] = (Item)Create(TileType.Gold);
+                int itemType = random.Next(2);
+                if (itemType == 0)
+                {
+                    items[i] = (Item)Create(TileType.Gold);
+                }
+                if (itemType == 1)
+                {
+                    items[i] = (Item)Create(TileType.Weapon);
+                }
             }
+           
             UpdateVision();
          }
 
@@ -70,8 +81,8 @@ namespace Gade6122_Part1_corrected
                     map[item.X, item.Y] = item;
                 }
             }
-            //place hero last so its not overwritten
-            if (!hero.IsDead)
+          //place hero last so its not overwritten
+                if (!hero.IsDead)
             {
                 map[hero.X, hero.Y] = hero;
             }
@@ -95,6 +106,42 @@ namespace Gade6122_Part1_corrected
             if (type == TileType.Gold)
             {
                 map[tileX, tileY] = new Gold(tileX, tileY);
+            }
+            else if (type == TileType.Weapon)
+            {
+                int weapontype = random.Next(2);
+                
+                
+                   
+                    int rng = random.Next(2);
+                    if (rng == 0) //melee
+                    {
+                        rng = random.Next(2);
+                        if (rng == 0)
+                        {
+                            map[tileX, tileY] = new MeleeWeapon(MeleeWeapon.Types.Dagger, tileX, tileY);
+                        }
+                        if (rng == 1)
+                        {
+                            map[tileX, tileY] = new MeleeWeapon(MeleeWeapon.Types.Longsword, tileX, tileY);
+
+                        }
+                    }
+                    if (rng == 1)//ranged
+                    {
+                        rng = random.Next(2);
+                        if (rng == 0)
+                        {
+                            map[tileX, tileY] = new RangedWeapon(RangedWeapon.Types.Rifle, tileX, tileY);
+
+                        }
+                        if (rng == 1)
+                        {
+                            map[tileX, tileY] = new RangedWeapon(RangedWeapon.Types.Rifle, tileX, tileY);
+
+                        }
+                    }
+                
             }
             else if (type == TileType.Enemy) //randomises between Swamp Creatures and Mages
             {
@@ -171,6 +218,15 @@ namespace Gade6122_Part1_corrected
                     {
                         s += "G";
                     }
+                    else if (tile is MeleeWeapon)
+                    {
+                        s += 'メ';
+                    }
+                    else if (tile is RangedWeapon)
+                    {
+                        s += '⌖';
+                    }
+
 
                 }
                 s += "\n";

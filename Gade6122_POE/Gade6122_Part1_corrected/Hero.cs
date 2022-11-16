@@ -21,7 +21,7 @@ namespace Gade6122_Part1_corrected
             {
                 return move;
             }
-            if (vision[(int)move] is EmptyTile || vision[(int)move] is Gold)
+            if (vision[(int)move] is EmptyTile || vision[(int)move] is Gold || vision[(int)move] is MeleeWeapon || vision[(int)move] is RangedWeapon)
             {
                 return move;
             }

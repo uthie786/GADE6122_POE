@@ -7,8 +7,8 @@ namespace Gade6122_Part1_corrected
     internal class MeleeWeapon : Weapon
     {
         public enum Types { Dagger, Longsword }
-        public override int Range { get { return base.range} };
-        public MeleeWeapon(Types type, int x, int y) : base(x, y, '⚔')
+        public override int Range { get { return base.range; } }
+        public MeleeWeapon(Types type, int x = 0, int y = 0) : base(x, y, 'メ')
         {
            
             switch (type)

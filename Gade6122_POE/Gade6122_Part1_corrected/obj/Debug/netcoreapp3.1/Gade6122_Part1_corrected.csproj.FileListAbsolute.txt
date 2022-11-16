@@ -75,3 +75,12 @@ C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_correct
 C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\obj\Debug\netcoreapp3.1\Gade6122_Part1_corrected.csproj.CoreCompileInputs.cache
 C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\obj\Debug\netcoreapp3.1\Gade6122_Part1_corrected.dll
 C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\obj\Debug\netcoreapp3.1\Gade6122_Part1_corrected.pdb
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.exe
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.deps.json
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.runtimeconfig.json
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.runtimeconfig.dev.json
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.dll
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Gade6122_Part1_corrected.pdb
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\obj\Debug\netcoreapp3.1\Gade6122_Part1_corrected.csproj.CopyComplete
+C:\Users\Uthmaan\Desktop\Github\GADE6122_POE\Gade6122_POE\Gade6122_Part1_corrected\obj\Debug\netcoreapp3.1\Gade6122_Part1_corrected.genruntimeconfig.cache

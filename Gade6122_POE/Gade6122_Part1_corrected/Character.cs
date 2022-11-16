@@ -112,6 +112,9 @@ namespace Gade6122_Part1_corrected
             if (item is Weapon)
             {
                 purse -= ((Weapon)item).Cost;
+                damage = ((Weapon)item).DMG;
+                 
+
             }
         }
 
