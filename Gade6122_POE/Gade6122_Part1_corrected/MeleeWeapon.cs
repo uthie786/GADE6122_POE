@@ -4,12 +4,13 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
-    public enum Types { Dagger, Longsword}
     internal class MeleeWeapon : Weapon
     {
+        public enum Types { Dagger, Longsword }
+        public override int Range { get { return base.range} };
         public MeleeWeapon(Types type, int x, int y) : base(x, y, '⚔')
         {
-            //overridden range thing
+           
             switch (type)
             {
                 case Types.Dagger:

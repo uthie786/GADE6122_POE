@@ -6,7 +6,6 @@ namespace Gade6122_Part1_corrected
 {
     internal class Leader : Enemy
     { 
-
         private Tile target { get; set; }
 
         public Leader(int x, int y) : base(x, y, 2, 20)
@@ -18,8 +17,8 @@ namespace Gade6122_Part1_corrected
         {
            Random random = new Random();
            int direction = random.Next(0, 4);
-           int heroX = target.X;
-           int heroY = target.Y;              
+            int heroX = target.X;
+            int heroY = target.Y;
            List<int> checkedDirection = new List<int>();
 
             int index = random.Next(4);
@@ -55,10 +54,6 @@ namespace Gade6122_Part1_corrected
 
             return (Movement)index;
             return Movement.NoMovemnt;
-
-
-
-
 
         }
     }

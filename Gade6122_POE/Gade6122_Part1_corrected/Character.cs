@@ -109,6 +109,10 @@ namespace Gade6122_Part1_corrected
                 int goldAmount = ((Gold)item).GoldAmount;
                 Purse += goldAmount;
             }
+            if (item is Weapon)
+            {
+                purse -= ((Weapon)item).Cost;
+            }
         }
 
         

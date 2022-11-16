@@ -28,7 +28,37 @@ namespace Gade6122_Part1_corrected
 
         private Weapon RandomWeapon()
         {
-           
+            
+            MeleeWeapon meleeWeapon;
+            RangedWeapon rangedWeapon;
+           int rng = random.Next(2);
+           if (rng == 0) //melee
+            {
+                rng = random.Next(2);
+                if (rng == 0)
+                {
+                    meleeWeapon = new MeleeWeapon(MeleeWeapon.Types.Dagger, buyer.X, buyer.Y);
+                    return meleeWeapon;
+                }
+                if (rng == 1)
+                {
+                    meleeWeapon = new MeleeWeapon(MeleeWeapon.Types.Longsword, buyer.X, buyer.Y);
+                    return meleeWeapon;
+                }
+            }
+            if (rng == 1)//ranged
+            {
+                rng = random.Next(2);
+                    if (rng == 0)
+                {
+                    rangedWeapon = new RangedWeapon(RangedWeapon.Types.Longbow, buyer.X, buyer.Y);
+                }
+                if (rng == 1)
+                {
+                    rangedWeapon = new RangedWeapon(RangedWeapon.Types.Rifle, buyer.X, buyer.Y);
+                }
+            }
+            return null;
         }
 
         public bool CanBuy(int num)
@@ -65,12 +95,13 @@ namespace Gade6122_Part1_corrected
 
         public void Buy(int num)
         {
-
+            buyer.PickUp(weapon[num]);
+            weapon[num] = RandomWeapon();
         }
 
         public string DisplayWeapon(int num)
         {
-
+            return "Buy " + weapon[num].WeaponType + "for " + weapon[num].Cost + "Gold.";
         }
     }
  }
