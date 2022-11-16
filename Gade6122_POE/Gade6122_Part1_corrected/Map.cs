@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Gade6122_Part1_corrected
 {
@@ -37,10 +38,12 @@ namespace Gade6122_Part1_corrected
            
 
             hero = (Hero)Create(TileType.Hero);
-            for (int i = 0; i < enemies.Length; i++)
+            enemies[0] = (Enemy)Create(TileType.Leader);
+            for (int i = 1; i < enemies.Length; i++)
             {
               enemies[i] = (Enemy)Create(TileType.Enemy);           
             }
+
             for (int i = 0; i < items.Length; i++)
             {
                 int itemType = random.Next(2);
@@ -74,6 +77,7 @@ namespace Gade6122_Part1_corrected
             {
                 map[enemy.X, enemy.Y] = enemy;
             }
+            
             foreach (Item item in items)
             {
                 if (item != null)
@@ -102,6 +106,11 @@ namespace Gade6122_Part1_corrected
             if(type == TileType.Hero)
             {
                 map[tileX, tileY] = new Hero(tileX, tileY, 100);
+            }
+            if (type == TileType.Leader)
+            {
+                map[tileX, tileY] = new Leader(tileX, tileY);
+
             }
             if (type == TileType.Gold)
             {
@@ -214,6 +223,10 @@ namespace Gade6122_Part1_corrected
                         }
                         else s += "M";
                     }
+                    else if (tile is Leader)
+                    {
+                        s += 'L';
+                    }
                     else if (tile is Gold)
                     {
                         s += "G";
@@ -253,7 +266,19 @@ namespace Gade6122_Part1_corrected
         public void MoveEnemies() //method that moves enemies in a random direction if possible
         {
             for (int i = 0; i < this.enemies.Length; i++)
-            {               
+            {
+
+                if (enemies[i] is Leader && enemies[i].IsDead == false) 
+                {
+                    Leader leader = enemies[i] as Leader;
+                    enemies[i].UpdateVision(map);
+                    leader.SetTarget(hero);
+                    Movement direction = leader.ReturnMove();
+
+                    enemies[i].UpdateVision(map);
+
+
+                }
                 if (enemies[i] is SwampCreature && enemies[i].IsDead == false) //right now only swampcreatures can move
                 {
 

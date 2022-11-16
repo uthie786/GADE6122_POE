@@ -11,6 +11,7 @@ namespace Gade6122_Part1_corrected
         Enemy,
         Gold,
         Weapon,
+        Leader,
         None
     }
     [Serializable]

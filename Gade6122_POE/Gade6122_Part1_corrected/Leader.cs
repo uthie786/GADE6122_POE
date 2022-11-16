@@ -12,8 +12,11 @@ namespace Gade6122_Part1_corrected
         {
           
         }
-
-        public override Movement ReturnMove(Movement move)
+        public void SetTarget(Hero hero)
+        {
+            this.target = hero;
+        }
+        public override Movement ReturnMove(Movement move = Movement.NoMovemnt)
         {
            Random random = new Random();
            int direction = random.Next(0, 4);
@@ -53,7 +56,6 @@ namespace Gade6122_Part1_corrected
                 return Movement.NoMovemnt;
 
             return (Movement)index;
-            return Movement.NoMovemnt;
 
         }
     }

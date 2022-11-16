@@ -113,8 +113,6 @@ namespace Gade6122_Part1_corrected
             {
                 purse -= ((Weapon)item).Cost;
                 damage = ((Weapon)item).DMG;
-                 
-
             }
         }
 
