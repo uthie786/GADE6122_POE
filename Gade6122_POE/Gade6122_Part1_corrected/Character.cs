@@ -18,15 +18,20 @@ namespace Gade6122_Part1_corrected
     {
        //protected variables for the characters
         protected int hp;
+        protected Weapon weapon;
         protected int maxHp;
         protected int damage;
+        protected int range;
+        protected string equippedWeapon;
         private int purse;
         protected Tile[] vision; //vision array thats used to checks tiles around a character
 
+        public Weapon Weapons { get { return weapon; } set { weapon = value; } }
         public int HP { get { return hp; } }
         public int MaxHP { get { return maxHp; } }
         public int Damage { get { return damage; } }
         public Tile[] Vision { get { return vision; } }
+        
 
         public bool IsDead //method that checks a characters HP and returns a boolean
         {
@@ -112,8 +117,15 @@ namespace Gade6122_Part1_corrected
             if (item is Weapon)
             {
                 purse -= ((Weapon)item).Cost;
-                damage = ((Weapon)item).DMG;
+                Equip((Weapon)item);
+
             }
+        }
+        private void Equip(Weapon w)
+        {
+            weapon = w;
+            damage = weapon.DMG;
+            range = weapon.Range;
         }
 
         

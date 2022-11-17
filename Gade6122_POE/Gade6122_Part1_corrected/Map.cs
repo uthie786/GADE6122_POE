@@ -262,6 +262,7 @@ namespace Gade6122_Part1_corrected
             return null;
 
         }
+       
 
         public void MoveEnemies() //method that moves enemies in a random direction if possible
         {
@@ -305,6 +306,11 @@ namespace Gade6122_Part1_corrected
                     if (direction == Movement.Right)
                     {
                        enemies[i].Move((Movement)Movement.Right);
+                    }
+                    Item item = GetItemAtPoisition(enemies[i].X, enemies[i].Y);
+                    if (item is Weapon || item is Gold)
+                    {
+                        enemies[i].PickUp(item);
                     }
 
                     enemies[i].UpdateVision(map);

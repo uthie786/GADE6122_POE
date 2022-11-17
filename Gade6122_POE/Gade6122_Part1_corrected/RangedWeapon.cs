@@ -8,7 +8,7 @@ namespace Gade6122_Part1_corrected
     {
         public enum Types { Rifle, Longbow }
         public override int Range { get { return base.range; } }
-        public RangedWeapon(Types type, int x = 0, int y = 0) : base(x, y, '⌖')
+        public RangedWeapon(Types type, int x = 0, int y = 0) : base(x, y)
         {
             switch (type)
             {
