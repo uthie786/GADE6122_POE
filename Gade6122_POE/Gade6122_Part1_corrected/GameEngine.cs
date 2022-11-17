@@ -31,6 +31,7 @@ namespace Gade6122_Part1_corrected
         }
         public bool MovePlayer(Movement direction) //mehtod that moves the player if a move is valid
         {
+            
             Movement validMove = map.Hero.ReturnMove(direction);
             if (!map.Hero.IsDead)
             {
@@ -56,7 +57,8 @@ namespace Gade6122_Part1_corrected
                 }
             }
             //hero moves and map is updated
-            map.Hero.Move(validMove);           
+            map.Hero.Move(validMove);        
+            
             map.UpdateMap();
             return true;
         }
@@ -108,7 +110,20 @@ namespace Gade6122_Part1_corrected
             map.UpdateMap(); //updates map first so enemies can attack correctly
             for (int i = 0; i < map.Enemy.Length; i++)
             {
-                
+                if (map.Enemy[i] is Leader && map.Enemy[i].IsDead == false)
+                {
+                    for (int x = 0; x < 4; x++)
+                    {
+                        Tile tile = map.Enemy[i].Vision[x];
+                        if (tile is Hero)
+                        {
+                            Hero hero = (Hero)tile;
+                            map.Enemy[i].Attack(hero);
+                        }
+                    }
+
+
+                }
                 if (map.Enemy[i] is SwampCreature && map.Enemy[i].IsDead == false)
                 {
                     for (int x = 0; x < 4; x++)
@@ -138,6 +153,7 @@ namespace Gade6122_Part1_corrected
                         }
                     }
                 }
+               
                 
                
             }

@@ -9,7 +9,8 @@ namespace Gade6122_Part1_corrected
     {
         public Mage(int x, int y): base(x, y, 5, 5)
         {
-
+            weapon = new MeleeWeapon(MeleeWeapon.Types.Barehanded);
+            Equip(weapon);
         }
         public override Movement ReturnMove(Movement move) //this method always returns a 0, as a Mage never moves
         {

@@ -121,7 +121,7 @@ namespace Gade6122_Part1_corrected
 
             }
         }
-        private void Equip(Weapon w)
+        public void Equip(Weapon w)
         {
             weapon = w;
             damage = weapon.DMG;

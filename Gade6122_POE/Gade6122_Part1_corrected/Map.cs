@@ -39,6 +39,7 @@ namespace Gade6122_Part1_corrected
 
             hero = (Hero)Create(TileType.Hero);
             enemies[0] = (Enemy)Create(TileType.Leader);
+            
             for (int i = 1; i < enemies.Length; i++)
             {
               enemies[i] = (Enemy)Create(TileType.Enemy);           
@@ -106,11 +107,12 @@ namespace Gade6122_Part1_corrected
             if(type == TileType.Hero)
             {
                 map[tileX, tileY] = new Hero(tileX, tileY, 100);
+                
             }
             if (type == TileType.Leader)
             {
                 map[tileX, tileY] = new Leader(tileX, tileY);
-
+                
             }
             if (type == TileType.Gold)
             {
@@ -277,7 +279,7 @@ namespace Gade6122_Part1_corrected
 
                 if (enemies[i] is Leader && enemies[i].IsDead == false) 
                 {
-                    
+                    enemies[i].UpdateVision(map);
                     Leader leader = enemies[i] as Leader;
                     enemies[i].UpdateVision(map);
                     leader.SetTarget(hero);

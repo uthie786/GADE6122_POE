@@ -10,7 +10,8 @@ namespace Gade6122_Part1_corrected
 
         public Leader(int x, int y) : base(x, y, 2, 20)
         {
-          
+            weapon = new MeleeWeapon(MeleeWeapon.Types.Longsword);
+            Equip(weapon);
         }
         public void SetTarget(Hero hero)
         {
@@ -18,6 +19,7 @@ namespace Gade6122_Part1_corrected
         }
         public override Movement ReturnMove(Movement move = Movement.NoMovemnt)
         {
+            
            Random random = new Random();
            int direction = random.Next(0, 4);
             int heroX = target.X;
@@ -29,7 +31,7 @@ namespace Gade6122_Part1_corrected
 
                 if (direction == 0 && !checkedDirection.Contains(direction))
                 {
-                    if (this.Y > heroY)
+                    if (this.Y >= heroY)
                     {
                         if (vision[direction] is EmptyTile || vision[direction] is Weapon)
                         {
@@ -40,7 +42,7 @@ namespace Gade6122_Part1_corrected
                 }
                 if (direction == 1 && !checkedDirection.Contains(direction))
                 {
-                    if (this.x < heroX)
+                    if (this.x <= heroX)
                     {
                         if (vision[direction] is EmptyTile || vision[direction] is Weapon)
                         {
@@ -51,22 +53,22 @@ namespace Gade6122_Part1_corrected
                 }
                 if (direction == 2 && !checkedDirection.Contains(direction))
                 {
-                    if (this.x > heroX )
+                    if (this.y <= heroY )
                     {
                         if (vision[direction] is EmptyTile || vision[direction] is Weapon)
                         {
-                            this.Move(Movement.Left);
+                            this.Move(Movement.Down);
                             return Movement.NoMovemnt;
                         }
                     }
                 }
                 if (direction == 3 && !checkedDirection.Contains(direction))
                 {
-                    if (this.Y < heroY)
+                    if (this.X >= heroX)
                     {
                         if (vision[direction] is EmptyTile || vision[direction] is Weapon)
                         {
-                            this.Move(Movement.Down);
+                            this.Move(Movement.Left);
                             return Movement.NoMovemnt;
                         }
                     }

@@ -15,6 +15,7 @@ namespace Gade6122_Part1_corrected
             this.damage = 2;
             weapon = new MeleeWeapon(MeleeWeapon.Types.Barehanded); 
             
+            
 
         }
         //going to have to change for hero moving onto a GOLD or WEAPON tile for example
