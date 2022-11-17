@@ -108,6 +108,7 @@ namespace Gade6122_Part1_corrected
             map.UpdateMap(); //updates map first so enemies can attack correctly
             for (int i = 0; i < map.Enemy.Length; i++)
             {
+                
                 if (map.Enemy[i] is SwampCreature && map.Enemy[i].IsDead == false)
                 {
                     for (int x = 0; x < 4; x++)

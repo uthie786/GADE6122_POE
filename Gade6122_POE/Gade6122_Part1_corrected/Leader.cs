@@ -24,38 +24,57 @@ namespace Gade6122_Part1_corrected
             int heroY = target.Y;
            List<int> checkedDirection = new List<int>();
 
-            int index = random.Next(4);
-            while (checkedDirection.Count < 4 && (!(vision[index] is EmptyTile)))
+            while (checkedDirection.Count < 4)
             {
-                if (checkedDirection.Contains(index))
-                    checkedDirection.Add(index);
 
-                index = random.Next(4);
-                if ((vision[(int)direction].X < heroX))
+                if (direction == 0 && !checkedDirection.Contains(direction))
                 {
-                    this.Move(Movement.Right);
-                    return Movement.NoMovemnt;
+                    if (this.Y > heroY)
+                    {
+                        if (vision[direction] is EmptyTile || vision[direction] is Weapon)
+                        {
+                            this.Move(Movement.Up);
+                            return Movement.NoMovemnt;
+                        }
+                    }
                 }
-                if ((vision[(int)direction].X > heroX))
+                if (direction == 1 && !checkedDirection.Contains(direction))
                 {
-                    this.Move(Movement.Left);
-                    return Movement.NoMovemnt;
+                    if (this.x < heroX)
+                    {
+                        if (vision[direction] is EmptyTile || vision[direction] is Weapon)
+                        {
+                            this.Move(Movement.Right);
+                            return Movement.NoMovemnt;
+                        }
+                    }
                 }
-                if ((vision[(int)direction].X < heroY))
+                if (direction == 2 && !checkedDirection.Contains(direction))
                 {
-                    this.Move(Movement.Up);
-                    return Movement.NoMovemnt;
+                    if (this.x > heroX )
+                    {
+                        if (vision[direction] is EmptyTile || vision[direction] is Weapon)
+                        {
+                            this.Move(Movement.Left);
+                            return Movement.NoMovemnt;
+                        }
+                    }
                 }
-                if ((vision[(int)direction].X > heroY))
+                if (direction == 3 && !checkedDirection.Contains(direction))
                 {
-                    this.Move(Movement.Down);
-                    return Movement.NoMovemnt;
+                    if (this.Y < heroY)
+                    {
+                        if (vision[direction] is EmptyTile || vision[direction] is Weapon)
+                        {
+                            this.Move(Movement.Down);
+                            return Movement.NoMovemnt;
+                        }
+                    }
                 }
+                direction = random.Next(0, 4);
             }
-            if (checkedDirection.Count == 4)
-                return Movement.NoMovemnt;
 
-            return (Movement)index;
+            return (Movement.NoMovemnt);
 
         }
     }

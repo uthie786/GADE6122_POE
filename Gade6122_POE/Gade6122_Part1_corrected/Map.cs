@@ -224,8 +224,14 @@ namespace Gade6122_Part1_corrected
                         else s += "M";
                     }
                     else if (tile is Leader)
-                    {
-                        s += 'L';
+                    { 
+                        
+                        if (((Leader)tile).IsDead)
+                        {
+                            tile = new EmptyTile(tile.X, tile.Y);
+                            s += '†';
+                        }
+                        else s += 'L';
                     }
                     else if (tile is Gold)
                     {
@@ -271,10 +277,11 @@ namespace Gade6122_Part1_corrected
 
                 if (enemies[i] is Leader && enemies[i].IsDead == false) 
                 {
+                    
                     Leader leader = enemies[i] as Leader;
                     enemies[i].UpdateVision(map);
                     leader.SetTarget(hero);
-                    Movement direction = leader.ReturnMove();
+                    leader.ReturnMove();
 
                     enemies[i].UpdateVision(map);
 
