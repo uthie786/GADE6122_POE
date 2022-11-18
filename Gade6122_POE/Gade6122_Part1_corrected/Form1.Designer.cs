@@ -38,6 +38,7 @@ namespace Gade6122_Part1_corrected
             this.btnShop3 = new System.Windows.Forms.Button();
             this.btnShop1 = new System.Windows.Forms.Button();
             this.btnShop2 = new System.Windows.Forms.Button();
+            this.lblShops = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblMap
@@ -119,9 +120,9 @@ namespace Gade6122_Part1_corrected
             this.btnShop3.BackColor = System.Drawing.Color.Black;
             this.btnShop3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShop3.ForeColor = System.Drawing.Color.Red;
-            this.btnShop3.Location = new System.Drawing.Point(462, 331);
+            this.btnShop3.Location = new System.Drawing.Point(472, 331);
             this.btnShop3.Name = "btnShop3";
-            this.btnShop3.Size = new System.Drawing.Size(75, 23);
+            this.btnShop3.Size = new System.Drawing.Size(85, 33);
             this.btnShop3.TabIndex = 6;
             this.btnShop3.Text = "(Shop3)";
             this.btnShop3.UseVisualStyleBackColor = false;
@@ -132,9 +133,9 @@ namespace Gade6122_Part1_corrected
             this.btnShop1.BackColor = System.Drawing.Color.Black;
             this.btnShop1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShop1.ForeColor = System.Drawing.Color.Red;
-            this.btnShop1.Location = new System.Drawing.Point(300, 331);
+            this.btnShop1.Location = new System.Drawing.Point(290, 331);
             this.btnShop1.Name = "btnShop1";
-            this.btnShop1.Size = new System.Drawing.Size(75, 23);
+            this.btnShop1.Size = new System.Drawing.Size(85, 33);
             this.btnShop1.TabIndex = 7;
             this.btnShop1.Text = "(Shop1)";
             this.btnShop1.UseVisualStyleBackColor = false;
@@ -147,11 +148,23 @@ namespace Gade6122_Part1_corrected
             this.btnShop2.ForeColor = System.Drawing.Color.Red;
             this.btnShop2.Location = new System.Drawing.Point(381, 331);
             this.btnShop2.Name = "btnShop2";
-            this.btnShop2.Size = new System.Drawing.Size(75, 23);
+            this.btnShop2.Size = new System.Drawing.Size(85, 33);
             this.btnShop2.TabIndex = 8;
             this.btnShop2.Text = "(Shop2)";
             this.btnShop2.UseVisualStyleBackColor = false;
             this.btnShop2.Click += new System.EventHandler(this.btnShop2_Click);
+            // 
+            // lblShops
+            // 
+            this.lblShops.AutoSize = true;
+            this.lblShops.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblShops.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblShops.ForeColor = System.Drawing.Color.Red;
+            this.lblShops.Location = new System.Drawing.Point(402, 299);
+            this.lblShops.Name = "lblShops";
+            this.lblShops.Size = new System.Drawing.Size(47, 20);
+            this.lblShops.TabIndex = 9;
+            this.lblShops.Text = "Shop";
             // 
             // frm1
             // 
@@ -159,6 +172,7 @@ namespace Gade6122_Part1_corrected
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblShops);
             this.Controls.Add(this.btnShop2);
             this.Controls.Add(this.btnShop1);
             this.Controls.Add(this.btnShop3);
@@ -190,6 +204,7 @@ namespace Gade6122_Part1_corrected
         private System.Windows.Forms.Button btnShop3;
         private System.Windows.Forms.Button btnShop1;
         private System.Windows.Forms.Button btnShop2;
+        private System.Windows.Forms.Label lblShops;
     }
 }
 

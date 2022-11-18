@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
+    [Serializable]
     internal class MeleeWeapon : Weapon
     {
         public enum Types { Dagger, Longsword, Barehanded }
@@ -32,8 +33,7 @@ namespace Gade6122_Part1_corrected
                     cost = 0;
                     break;
                 default:
-
-                    break;
+                   break;
             }
         }
 

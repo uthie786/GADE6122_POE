@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
+    [Serializable]
     internal class Leader : Enemy
     { 
         private Tile target { get; set; }

@@ -6,11 +6,12 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
+    [Serializable]
     public class Shop
     {
         public Character buyer;
         public Weapon[] weapon;
-        protected static Random random = new Random();
+       [NonSerialized] protected static Random random = new Random();
         
 
         public Shop(Character temp)

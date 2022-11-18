@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Gade6122_Part1_corrected
 {
+    [Serializable]
     internal class RangedWeapon : Weapon
     {
         public enum Types { Rifle, Longbow }
@@ -27,7 +28,6 @@ namespace Gade6122_Part1_corrected
                     range = 2;
                     break;
                 default:
-
                     break;
             }
         }

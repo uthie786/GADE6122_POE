@@ -56,6 +56,12 @@ namespace Gade6122_Part1_corrected
                     map.Hero.PickUp(item);
                     map.UpdateMap();
                 }
+
+                if(item is RangedWeapon)
+                {
+                    map.Hero.PickUp(item);
+                    map.UpdateMap();
+                }                
             }
             //hero moves and map is updated
             map.Hero.Move(validMove);        

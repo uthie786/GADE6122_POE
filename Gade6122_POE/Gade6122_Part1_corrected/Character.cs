@@ -118,14 +118,15 @@ namespace Gade6122_Part1_corrected
             {
                 purse -= ((Weapon)item).Cost;
                 Equip((Weapon)item);
-
             }
+            
         }
         public void Equip(Weapon w)
         {
             weapon = w;
-            damage = weapon.DMG;
-            range = weapon.Range;
+           // damage = weapon.DMG;
+           // range = weapon.Range;
+           // equippedWeapon = weapon.WeaponType;
         }
         public void Loot(Character target, bool isMage)
         {
