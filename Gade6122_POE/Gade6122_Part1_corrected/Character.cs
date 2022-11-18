@@ -78,7 +78,7 @@ namespace Gade6122_Part1_corrected
 
         public void UpdateVision(Tile[,] map) //method that updates the vision array for a character
         {
-            //up
+            //up M
             vision[0] = y - 1 >= 0 ? map[x, y - 1] : null;
             //right
             vision[1] = x < map.GetLength(0) ? map[x + 1, y] : null;
@@ -126,6 +126,15 @@ namespace Gade6122_Part1_corrected
             weapon = w;
             damage = weapon.DMG;
             range = weapon.Range;
+        }
+        public void Loot(Character target, bool isMage)
+        {
+            purse += target.purse;
+            target.purse -= target.purse; 
+            if (weapon.WeaponType == "Barehanded" && isMage == false)
+            {
+                Equip(target.weapon);
+            }
         }
 
         

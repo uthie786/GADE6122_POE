@@ -94,7 +94,9 @@ namespace Gade6122_Part1_corrected
                     if (enemy.IsDead)
                     {
                         //the attack is output into a label
+                        map.Hero.Loot(enemy, false);
                         return "Hero killed " + enemy.ToString();
+                       
 
 
                     }
@@ -134,6 +136,7 @@ namespace Gade6122_Part1_corrected
                             Hero hero = (Hero)tile;
                             map.Enemy[i].Attack(hero);
                         }
+                        
                     }
                 }
                 else if (map.Enemy[i] is Mage && map.Enemy[i].IsDead == false) //mages are able to friendly fire on swampcreatures
@@ -148,8 +151,30 @@ namespace Gade6122_Part1_corrected
                         }
                         if (tile is SwampCreature)
                         {
-                            swampCreature = (SwampCreature)tile;
+                            SwampCreature swampCreature = (SwampCreature)tile;
                            map.Enemy[i].Attack(swampCreature);
+                            if (swampCreature.IsDead)
+                            {
+                                map.Enemy[i].Loot(swampCreature, true);
+                            }
+                        }
+                        if (tile is Mage)
+                        {
+                            Mage mage = (Mage)tile;
+                            map.Enemy[i].Attack(mage);
+                            if (mage.IsDead)
+                            {
+                                map.Enemy[i].Loot(mage, true);
+                            }
+                        }
+                        if (tile is Leader)
+                        {
+                            Leader leader  = (Leader)tile;
+                            map.Enemy[i].Attack(leader);
+                            if (leader.IsDead)
+                            {
+                                map.Enemy[i].Loot(leader, true);
+                            }
                         }
                     }
                 }

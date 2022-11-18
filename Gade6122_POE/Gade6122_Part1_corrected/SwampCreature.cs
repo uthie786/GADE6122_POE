@@ -12,6 +12,7 @@ namespace Gade6122_Part1_corrected
         {
             weapon = new MeleeWeapon(MeleeWeapon.Types.Dagger);
             Equip(weapon);
+            Purse += 1;
         }
 
         public override Movement ReturnMove(Movement move = Movement.NoMovemnt) //movement method that randomly picks a direction and outputs a valid movement direction

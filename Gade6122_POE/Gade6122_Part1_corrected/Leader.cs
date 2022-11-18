@@ -12,6 +12,7 @@ namespace Gade6122_Part1_corrected
         {
             weapon = new MeleeWeapon(MeleeWeapon.Types.Longsword);
             Equip(weapon);
+            Purse += 2;
         }
         public void SetTarget(Hero hero)
         {

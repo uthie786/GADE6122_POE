@@ -11,6 +11,7 @@ namespace Gade6122_Part1_corrected
         {
             weapon = new MeleeWeapon(MeleeWeapon.Types.Barehanded);
             Equip(weapon);
+            Purse += 3;
         }
         public override Movement ReturnMove(Movement move) //this method always returns a 0, as a Mage never moves
         {

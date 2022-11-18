@@ -19,6 +19,7 @@ namespace Gade6122_Part1_corrected
             KeyPreview = true;
             InitializeComponent();
             gameEngine = new GameEngine();
+            btnShop1.Tet
             lblMap.Text = gameEngine.Display;
             UpdateDisplay();
             lblAttackInfo.Text = attackInfo;
@@ -161,6 +162,19 @@ namespace Gade6122_Part1_corrected
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnShop2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShop3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
