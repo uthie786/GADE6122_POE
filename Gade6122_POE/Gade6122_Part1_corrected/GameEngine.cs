@@ -28,6 +28,7 @@ namespace Gade6122_Part1_corrected
         public GameEngine()
         { //creating the size of the map
             map = new Map(10, 20, 10, 20, 8, 4);
+            shop = new Shop(map.Hero);
         }
         public bool MovePlayer(Movement direction) //mehtod that moves the player if a move is valid
         {

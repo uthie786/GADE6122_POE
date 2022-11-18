@@ -19,7 +19,12 @@ namespace Gade6122_Part1_corrected
             KeyPreview = true;
             InitializeComponent();
             gameEngine = new GameEngine();
-            btnShop1.Tet
+            btnShop1.Text = gameEngine.shop.weapon[0].WeaponType;
+            btnShop1.Enabled = false;
+            btnShop2.Text = gameEngine.shop.weapon[1].WeaponType;
+            btnShop2.Enabled = false;
+            btnShop3.Text = gameEngine.shop.weapon[2].WeaponType;
+            btnShop3.Enabled = false;
             lblMap.Text = gameEngine.Display;
             UpdateDisplay();
             lblAttackInfo.Text = attackInfo;
@@ -133,6 +138,25 @@ namespace Gade6122_Part1_corrected
         {
             lblHeroStats.Text = gameEngine.HeroStats;
             lblMap.Text = gameEngine.Display;
+            btnShop1.Text = gameEngine.shop.weapon[0].WeaponType;
+            btnShop2.Text = gameEngine.shop.weapon[1].WeaponType;
+            btnShop3.Text = gameEngine.shop.weapon[2].WeaponType;
+
+            if (gameEngine.shop.CanBuy(0))
+            {
+                btnShop1.Enabled = true;
+            }
+            else btnShop1.Enabled = false;
+            if (gameEngine.shop.CanBuy(1))
+            {
+                btnShop2.Enabled = true;
+            }
+            else btnShop2.Enabled = false;
+            if (gameEngine.shop.CanBuy(2))
+            {
+                btnShop3.Enabled = true;
+            }
+            else btnShop3.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -159,22 +183,22 @@ namespace Gade6122_Part1_corrected
 
         private void frm1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+                gameEngine.shop.Buy(0);
         }
 
         private void btnShop2_Click(object sender, EventArgs e)
         {
-
+            gameEngine.shop.Buy(1);
         }
 
         private void btnShop3_Click(object sender, EventArgs e)
         {
-
+            gameEngine.shop.Buy(2);
         }
     }
 }

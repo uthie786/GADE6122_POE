@@ -9,7 +9,7 @@ namespace Gade6122_Part1_corrected
     public class Shop
     {
         public Character buyer;
-        Weapon[] weapon;
+        public Weapon[] weapon;
         protected static Random random = new Random();
         
 
@@ -49,13 +49,15 @@ namespace Gade6122_Part1_corrected
             if (rng == 1)//ranged
             {
                 rng = random.Next(2);
-                    if (rng == 0)
+                if (rng == 0)
                 {
                     rangedWeapon = new RangedWeapon(RangedWeapon.Types.Longbow, buyer.X, buyer.Y);
+                    return rangedWeapon;
                 }
                 if (rng == 1)
                 {
                     rangedWeapon = new RangedWeapon(RangedWeapon.Types.Rifle, buyer.X, buyer.Y);
+                    return rangedWeapon;
                 }
             }
             return null;
