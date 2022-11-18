@@ -18,7 +18,7 @@ namespace Gade6122_Part1_corrected
         }
         public override string ToString() //method used to display attacking information on the window
         {
-            return GetType().Name + " at [" + x + ", " + y + "] (" + damage + "dmg)"; 
+            return GetType().Name + " at [" + x + ", " + y + "] with "+ weapon.WeaponType+ " (" + damage + "dmg)" + " (" +weapon.Range + ")"; 
         }
 
         

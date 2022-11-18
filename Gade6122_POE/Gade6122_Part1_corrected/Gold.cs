@@ -7,7 +7,7 @@ namespace Gade6122_Part1_corrected
     [Serializable]
     public class Gold : Item //inherits from the item class
     {
-        private int goldAmount; //amount of gold represented by a gold drop 
+        private int amount; //amount of gold represented by a gold drop 
         [NonSerialized] private Random random = new Random(); //randomises gold amounts
 
         public Gold(int x,int y) : base(x, y)
@@ -17,13 +17,13 @@ namespace Gade6122_Part1_corrected
 
         public int GoldAmount //public accessor that can return that amount
         {
-            get { return goldAmount; }
-            set { goldAmount = value; }
+            get { return amount; }
+            set { amount = value; }
         }
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "Gold Amount";
         }
     }
 }

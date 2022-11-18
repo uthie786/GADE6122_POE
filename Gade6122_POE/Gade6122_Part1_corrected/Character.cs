@@ -130,8 +130,10 @@ namespace Gade6122_Part1_corrected
         }
         public void Loot(Character target, bool isMage)
         {
+            
+           
             purse += target.purse;
-            target.purse -= target.purse; 
+            target.purse = 0; 
             if (weapon.WeaponType == "Barehanded" && isMage == false)
             {
                 Equip(target.weapon);

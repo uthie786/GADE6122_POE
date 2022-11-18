@@ -20,11 +20,11 @@ namespace Gade6122_Part1_corrected
             InitializeComponent();
             gameEngine = new GameEngine();
             btnShop1.Text = gameEngine.shop.weapon[0].WeaponType;
-            btnShop1.Enabled = false;
+           btnShop1.Enabled = false;
             btnShop2.Text = gameEngine.shop.weapon[1].WeaponType;
-            btnShop2.Enabled = false;
+           btnShop2.Enabled = false;
             btnShop3.Text = gameEngine.shop.weapon[2].WeaponType;
-            btnShop3.Enabled = false;
+           btnShop3.Enabled = false;
             lblMap.Text = gameEngine.Display;
             UpdateDisplay();
             lblAttackInfo.Text = attackInfo;
@@ -146,17 +146,17 @@ namespace Gade6122_Part1_corrected
             {
                 btnShop1.Enabled = true;
             }
-            else btnShop1.Enabled = false;
+           else btnShop1.Enabled = false;
             if (gameEngine.shop.CanBuy(1))
             {
                 btnShop2.Enabled = true;
             }
-            else btnShop2.Enabled = false;
+           else btnShop2.Enabled = false;
             if (gameEngine.shop.CanBuy(2))
             {
                 btnShop3.Enabled = true;
             }
-            else btnShop3.Enabled = false;
+          else btnShop3.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)

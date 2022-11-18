@@ -59,7 +59,7 @@ namespace Gade6122_Part1_corrected
             this.lblAttackInfo.AutoSize = true;
             this.lblAttackInfo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblAttackInfo.ForeColor = System.Drawing.Color.Red;
-            this.lblAttackInfo.Location = new System.Drawing.Point(296, 384);
+            this.lblAttackInfo.Location = new System.Drawing.Point(238, 388);
             this.lblAttackInfo.Name = "lblAttackInfo";
             this.lblAttackInfo.Size = new System.Drawing.Size(128, 15);
             this.lblAttackInfo.TabIndex = 1;

@@ -24,12 +24,15 @@ namespace Gade6122_Part1_corrected
         {
             get { return map.Hero.ToString(); }
         }
+        public Shop Shop { get { return shop; } set { shop = value; } }
 
         public GameEngine()
         { //creating the size of the map
             map = new Map(10, 20, 10, 20, 8, 4);
             shop = new Shop(map.Hero);
+            
         }
+
         public bool MovePlayer(Movement direction) //mehtod that moves the player if a move is valid
         {
             
@@ -81,7 +84,7 @@ namespace Gade6122_Part1_corrected
                 return string.Empty;                            
             }
             Enemy enemy = (Enemy)tile;
-            return $"Enemy stats:\n HP = {enemy.HP}\n Damage = {enemy.Damage} \n Coordinates = ({enemy.X}, {enemy.Y})";
+            return $"Enemy stats:\n HP = {enemy.HP}\n Weapon = {enemy.Weapons.WeaponType} \n Range = {enemy.Weapons.WeaponType} \n Damage = {enemy.Damage} \n Coordinates = ({enemy.X}, {enemy.Y})";
         }
 
         public string PlayerAttack(Movement direction) //method that lets the hero attack in a specific direction
@@ -196,6 +199,7 @@ namespace Gade6122_Part1_corrected
             FileStream stream = new FileStream(SERIALIZED_GAME_SAVE, FileMode.Create, FileAccess.Write);
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(stream, map);
+            bf.Serialize(stream, shop);
             stream.Close();
         }
         public void Load()//reads the binary file and outputs back into the map
@@ -203,6 +207,7 @@ namespace Gade6122_Part1_corrected
             FileStream stream = new FileStream(SERIALIZED_GAME_SAVE, FileMode.Open, FileAccess.Read);
             BinaryFormatter bf = new BinaryFormatter();
             map = (Map)bf.Deserialize(stream);
+            shop = (Shop)bf.Deserialize(stream);
             stream.Close();
         }
 
